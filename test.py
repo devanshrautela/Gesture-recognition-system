@@ -9,7 +9,7 @@ import pyautogui
  
 def count_fingers(lst):
     cnt = 0
-
+ 
     thresh = (lst.landmark[0].y*100 - lst.landmark[9].y*100)/2
 
     if (lst.landmark[5].y*100 - lst.landmark[8].y*100) > thresh:
@@ -91,6 +91,8 @@ with mp_hands.Hands(min_detection_confidence=0.8, min_tracking_confidence=0.8) a
         if results.multi_hand_landmarks != None:
           for handLandmarks in results.multi_hand_landmarks:
             for point in mp_hands.HandLandmark:
+ 
+
  
     
                 normalizedLandmark = handLandmarks.landmark[point]
